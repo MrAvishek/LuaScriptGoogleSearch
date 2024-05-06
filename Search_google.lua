@@ -5,12 +5,14 @@
 -- author = "Avishek"
 -- version = "1.0"
 
--- Function to handle search
 function search(query)
     local url = "https://www.google.com/search?q=" .. encodeURIComponent(query)
     
     -- Perform an HTTP GET request to Google search
     http:get(url, "google_search")
+    
+    -- Show loading message while waiting for the response
+    ui:show_text("Loading...")
 end
 
 -- Callback function to handle search results
